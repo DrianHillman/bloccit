@@ -4,22 +4,20 @@
 
 <div class="row">
     <div class="col-md-8">
-      
-      <%= form_for @user do |f| %>
         
-      <div class="form-group">
-            <%= f.label :email %>
-            <%= f.email_field :email, class: 'form-control', placeholder: "Enter email" %>
-      </div>
-      <div class="form-group">
-            <%= f.label :name %>
-            <%= f.text_field :name, autofocus: true, class: 'form-control', placeholder: "Enter name" %>
-      </div>
-      <div class="form-group">
-          <%= button_to "Yes", {controller: "users", action: "create", params: params}, class: 'btn btn-success' %>
-          <%= button_to "No", new_user_path, class: 'btn' %>
-      </div>
-      <% end %>
-      
+      <h5>Email: <%= @user.email %></h5>
+      <h5>Name: <%= @user.name %></h5>
+      <br/><br/>
+          
     </div>
 </div>
+
+<div class="row">
+    <div class="col-md-4" style="width:auto;">
+        <%= button_to "Yes", {controller: "users", action: "create", params: params}, class: 'btn btn-success' %>
+    </div>    
+    <div class="col-md-4" style="width:auto;">
+        <%= button_to "No", {controller: "users", action: "new"}, class: 'btn btn-failure', :method => :get %>
+    </div>
+</div>
+          
