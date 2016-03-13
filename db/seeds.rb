@@ -53,6 +53,12 @@ end
    email:    'member@example.com',
    password: 'helloworld'
  )
+ # Create a moderator
+ member = User.create!(
+   name:     'Moderator User',
+   email:    'moderator@example.com',
+   password: 'helloworld'
+ )
 
 
 puts "Seed finished"
