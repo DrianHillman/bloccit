@@ -28,7 +28,10 @@ source 'https://rubygems.org'
  # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
  gem 'turbolinks'
 
-gem 'bootstrap-sass'
+ gem 'bootstrap-sass'
+ 
+ #Environment variables to store sensitive info like API keys / app credentials
+ gem 'figaro', '1.0'
 
  # Used for encrypting User passwords
  gem 'bcrypt'
