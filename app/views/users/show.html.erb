@@ -19,8 +19,17 @@
    </div>
  </div>
  
- <h2>Posts</h2>
- <%= render @user.posts %>
+ <% if @user.posts > 0 %>
+  <h2>Posts</h2>
+  <%= render @user.posts %>
+ <% else %>
+  <h4> <%={@user.name}%> has not submitted any posts yet. </h4>
  
  <h2>Comments</h2>
  <%= render @user.comments %>
+ 
+ <h2>Favorites</h2>
+ <%= render @user.favorites each do |x| %>
+  <%= image_tag x.current_user.avatar_url(48), class: "gravatar" %>
+  <%= x %>
+ <% end %>
