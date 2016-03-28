@@ -10,6 +10,6 @@ class Api::V1::PostsController < Api::V1::BaseController
   
   def show
     post = Post.find(params[:id])
-    render json: post.comments.to_json, status: 200
+    render json: post.to_json(include: :comments), status: 200
   end
 end
