@@ -1,39 +1,53 @@
 <h2>Sign up</h2>
- 
- <div class="row">
-   <div class="col-md-8">
-     <%= form_for @user do |f| %>
 
-       <% if @user.errors.any? %>
-         <div class="alert alert-danger">
-           <h4><%= pluralize(@user.errors.count, "error") %>.</h4>
-           <ul>
-             <% @user.errors.full_messages.each do |msg| %>
-               <li><%= msg %></li>
-             <% end %>
-           </ul>
-         </div>
-       <% end %>
+<div class="row">
+  <div class="col-md-8">
+    <%= form_for @user do |f| %>
 
-       <%= form_group_tag(@user.errors[:name]) do %>
-         <%= f.label :name %>
-         <%= f.text_field :name, autofocus: true, class: 'form-control', placeholder: "Enter name" %>
-       <% end %>
-       <%= form_group_tag(@user.errors[:email]) do %>
-         <%= f.label :email %>
-         <%= f.email_field :email, class: 'form-control', placeholder: "Enter email" %>
-       <% end %>
-       <%= form_group_tag(@user.errors[:password]) do %>
-         <%= f.label :password %>
-         <%= f.password_field :password, class: 'form-control', placeholder: "Enter password" %>
-       <% end %>
-       <%= form_group_tag(@user.errors[:password_confirmation]) do %>
-         <%= f.label :password_confirmation, "Confirm Password" %>
-         <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Enter password confirmation" %>
-       <% end %>
-       <div class="form-group">
-         <%= f.submit "Sign up", class: 'btn btn-success' %>
-       </div>
-     <% end %>
-   </div>
- </div>
+      <% if @user.errors.any? %>
+        <div class="alert alert-danger">
+          <h4>
+            <%= pluralize(@user.errors.count, "error") %>.</h4>
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li>
+                <%= msg %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <%= form_group_tag(@user.errors[:name]) do %>
+        <%= f.label :name %>
+        <%= f.text_field :name, autofocus: true, class: 'form-control', placeholder: "Enter name" %>
+      <% end %>
+      <%= form_group_tag(@user.errors[:email]) do %>
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control', placeholder: "Enter email" %>
+      <% end %>
+      <%= form_group_tag(@user.errors[:password]) do %>
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control', placeholder: "Enter password" %>
+      <% end %>
+      <%= form_group_tag(@user.errors[:password_confirmation]) do %>
+        <%= f.label :password_confirmation, "Confirm Password" %>
+        <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Enter password confirmation" %>
+      <% end %>
+      <div class="form-group">
+        <%= f.submit "Sign up", class: 'btn btn-success' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="row">
+  <blockquote class="col-md-12" style="margin-top: 48px;">
+    <p class="help-block">To Demo the Application without registering, you may sign in with:</p>
+    <div class="col-md-3">
+      <p style="margin-left: 1em;"><strong>admin@example.com<br>helloworld</strong></p>
+    </div>
+    <div class="col-md-3">
+      <p style="margin-left: 1em;"><strong>member@example.com<br>helloworld</strong></p>
+    </div>
+  </blockquote>
+</div>
